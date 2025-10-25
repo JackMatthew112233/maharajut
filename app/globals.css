@@ -1,0 +1,417 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Custom font variables */
+:root {
+    --font-inter: "Inter", sans-serif;
+    --font-playfair: "Playfair Display", serif;
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-inter);
+    --font-serif: var(--font-playfair);
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* Maharajut Color Theme - Brown & White */
+:root {
+    --radius: 0.75rem;
+    --background: #ffffff;
+    --foreground: #1c1917;
+    --card: #ffffff;
+    --card-foreground: #1c1917;
+    --popover: #ffffff;
+    --popover-foreground: #1c1917;
+    --primary: #92400e;
+    --primary-foreground: #ffffff;
+    --secondary: #f5f5f4;
+    --secondary-foreground: #1c1917;
+    --muted: #f5f5f4;
+    --muted-foreground: #78716c;
+    --accent: #fef3c7;
+    --accent-foreground: #92400e;
+    --destructive: #dc2626;
+    --border: #e7e5e4;
+    --input: #e7e5e4;
+    --ring: #d97706;
+    --chart-1: #d97706;
+    --chart-2: #92400e;
+    --chart-3: #451a03;
+    --chart-4: #fbbf24;
+    --chart-5: #f59e0b;
+
+    /* Maharajut specific colors */
+    --maharajut-brown-50: #fef7ed;
+    --maharajut-brown-100: #fef3c7;
+    --maharajut-brown-200: #fde68a;
+    --maharajut-brown-300: #fcd34d;
+    --maharajut-brown-400: #fbbf24;
+    --maharajut-brown-500: #f59e0b;
+    --maharajut-brown-600: #d97706;
+    --maharajut-brown-700: #b45309;
+    --maharajut-brown-800: #92400e;
+    --maharajut-brown-900: #78350f;
+    --maharajut-brown-950: #451a03;
+
+    --maharajut-amber-50: #fffbeb;
+    --maharajut-amber-100: #fef3c7;
+    --maharajut-amber-200: #fde68a;
+    --maharajut-amber-300: #fcd34d;
+    --maharajut-amber-400: #fbbf24;
+    --maharajut-amber-500: #f59e0b;
+    --maharajut-amber-600: #d97706;
+    --maharajut-amber-700: #b45309;
+    --maharajut-amber-800: #92400e;
+    --maharajut-amber-900: #78350f;
+}
+
+.dark {
+    --background: #0c0a09;
+    --foreground: #fafaf9;
+    --card: #1c1917;
+    --card-foreground: #fafaf9;
+    --popover: #1c1917;
+    --popover-foreground: #fafaf9;
+    --primary: #fbbf24;
+    --primary-foreground: #451a03;
+    --secondary: #292524;
+    --secondary-foreground: #fafaf9;
+    --muted: #292524;
+    --muted-foreground: #a8a29e;
+    --accent: #292524;
+    --accent-foreground: #fbbf24;
+    --destructive: #dc2626;
+    --border: #292524;
+    --input: #292524;
+    --ring: #d97706;
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings:
+            "rlig" 1,
+            "calt" 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeSpeed;
+        line-height: 1.6;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--maharajut-brown-50);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--maharajut-brown-300);
+        border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--maharajut-brown-400);
+    }
+
+    /* Selection */
+    ::selection {
+        background: var(--maharajut-amber-200);
+        color: var(--maharajut-brown-900);
+    }
+
+    ::-moz-selection {
+        background: var(--maharajut-amber-200);
+        color: var(--maharajut-brown-900);
+    }
+}
+
+@layer components {
+    /* Typography */
+    .font-heading {
+        font-family: var(--font-playfair);
+        font-weight: 600;
+        line-height: 1.2;
+    }
+
+    .font-body {
+        font-family: var(--font-inter);
+        line-height: 1.6;
+    }
+
+    /* Custom gradient backgrounds */
+    .bg-maharajut-gradient {
+        background: linear-gradient(
+            135deg,
+            var(--maharajut-brown-50) 0%,
+            var(--maharajut-amber-50) 50%,
+            var(--maharajut-brown-50) 100%
+        );
+    }
+
+    .bg-maharajut-warm-gradient {
+        background: linear-gradient(
+            135deg,
+            var(--maharajut-amber-400) 0%,
+            var(--maharajut-brown-600) 100%
+        );
+    }
+
+    /* Custom animations */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes scaleIn {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes float {
+        0%,
+        100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    .animate-fadeInUp {
+        animation: fadeInUp 0.6s ease-out;
+    }
+
+    .animate-fadeInDown {
+        animation: fadeInDown 0.6s ease-out;
+    }
+
+    .animate-slideInLeft {
+        animation: slideInLeft 0.6s ease-out;
+    }
+
+    .animate-slideInRight {
+        animation: slideInRight 0.6s ease-out;
+    }
+
+    .animate-scaleIn {
+        animation: scaleIn 0.6s ease-out;
+    }
+
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    /* Custom button styles */
+    .btn-maharajut {
+        @apply bg-gradient-to-r from-amber-500 to-amber-600 text-white font-medium px-6 py-3 rounded-lg hover:from-amber-600 hover:to-amber-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1;
+    }
+
+    .btn-maharajut-outline {
+        @apply border-2 border-amber-600 text-amber-600 font-medium px-6 py-3 rounded-lg hover:bg-amber-600 hover:text-white transition-all duration-300;
+    }
+
+    /* Custom card styles */
+    .card-maharajut {
+        @apply bg-white border border-amber-100 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+    }
+
+    .card-maharajut-hover {
+        @apply hover:shadow-2xl hover:scale-105 transition-all duration-300;
+    }
+
+    /* Text decoration */
+    .text-decoration-maharajut {
+        position: relative;
+    }
+
+    .text-decoration-maharajut::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(
+            90deg,
+            var(--maharajut-amber-500),
+            var(--maharajut-brown-600)
+        );
+        border-radius: 2px;
+    }
+
+    /* Loading spinner */
+    .spinner-maharajut {
+        border: 2px solid var(--maharajut-brown-200);
+        border-top: 2px solid var(--maharajut-brown-600);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+@layer utilities {
+    /* Text utilities */
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    .text-pretty {
+        text-wrap: pretty;
+    }
+
+    /* Custom spacing */
+    .section-padding {
+        @apply py-16 md:py-20 lg:py-24;
+    }
+
+    .container-padding {
+        @apply px-4 sm:px-6 lg:px-8;
+    }
+
+    /* Focus styles */
+    .focus-maharajut {
+        @apply focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-white;
+    }
+
+    /* Responsive utilities */
+    .aspect-product {
+        aspect-ratio: 4/5;
+    }
+
+    .aspect-hero {
+        aspect-ratio: 16/9;
+    }
+
+    /* Glass morphism effect */
+    .glass-maharajut {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
