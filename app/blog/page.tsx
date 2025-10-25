@@ -8,7 +8,6 @@ import {
   User,
   ArrowRight,
   BookOpen,
-  Tag,
   Search,
 } from "lucide-react";
 import Link from "next/link";
@@ -31,7 +30,7 @@ const BlogPage = () => {
   ];
 
   const filteredPosts = useMemo(() => {
-    let filtered = blogPosts.filter((post) => {
+    const filtered = blogPosts.filter((post) => {
       const matchesSearch =
         post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -102,7 +101,6 @@ const BlogPage = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
       },
     },
   };
