@@ -35,7 +35,7 @@ const HeroSection = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6 },
     },
   };
 
@@ -55,7 +55,7 @@ const HeroSection = () => {
     visible: {
       scale: 1,
       opacity: 1,
-      transition: { duration: 0.5, ease: "easeOut" },
+      transition: { duration: 0.5 },
     },
   };
 
@@ -170,7 +170,7 @@ const HeroSection = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.8, x: 100 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
             {/* Main hero image carousel */}
@@ -210,7 +210,6 @@ const HeroSection = () => {
                 transition={{
                   duration: 4,
                   repeat: Infinity,
-                  ease: "easeInOut",
                 }}
                 className="absolute -top-6 -right-6 bg-white p-4 rounded-2xl shadow-xl border border-amber-100"
               >
@@ -226,7 +225,6 @@ const HeroSection = () => {
                 transition={{
                   duration: 3,
                   repeat: Infinity,
-                  ease: "easeInOut",
                   delay: 0.5,
                 }}
                 className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-amber-100"
@@ -243,13 +241,13 @@ const HeroSection = () => {
             {/* Background decorative elements */}
             <motion.div
               animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 20, repeat: Infinity }}
               className="absolute top-1/4 -right-8 w-16 h-16 border-2 border-dashed border-amber-300 rounded-full opacity-60"
             />
 
             <motion.div
               animate={{ rotate: -360 }}
-              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 15, repeat: Infinity }}
               className="absolute bottom-1/4 -left-8 w-12 h-12 border-2 border-dashed border-amber-400 rounded-full opacity-40"
             />
           </motion.div>

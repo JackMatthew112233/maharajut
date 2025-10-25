@@ -38,7 +38,6 @@ const TestimonialsSection = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
       },
     },
   };
@@ -149,7 +148,7 @@ const TestimonialsSection = () => {
               {/* Testimonial Content */}
               <motion.div variants={itemVariants} className="lg:col-span-2">
                 <blockquote className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-6 font-medium">
-                  "{testimonials[currentIndex].comment}"
+                  &ldquo;{testimonials[currentIndex].comment}&rdquo;
                 </blockquote>
 
                 <div className="flex items-center justify-between">
@@ -218,7 +217,7 @@ const TestimonialsSection = () => {
           {testimonials
             .filter((_, index) => index !== currentIndex)
             .slice(0, 3)
-            .map((testimonial, index) => (
+            .map((testimonial) => (
               <motion.div
                 key={testimonial.id}
                 variants={itemVariants}
@@ -247,7 +246,7 @@ const TestimonialsSection = () => {
                 </div>
 
                 <blockquote className="text-gray-700 mb-3 line-clamp-3">
-                  "{testimonial.comment}"
+                  &ldquo;{testimonial.comment}&rdquo;
                 </blockquote>
 
                 <p className="text-xs text-gray-500">

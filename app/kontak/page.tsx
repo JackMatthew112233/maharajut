@@ -122,7 +122,6 @@ const KontakPage = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
       },
     },
   };

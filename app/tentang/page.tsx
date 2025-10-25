@@ -1,62 +1,97 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Award, Users, Target, Heart, Sparkles, TrendingUp } from 'lucide-react';
-import { companyInfo } from '@/lib/data';
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  Award,
+  Users,
+  Target,
+  Heart,
+  Sparkles,
+  TrendingUp,
+} from "lucide-react";
+import { companyInfo } from "@/lib/data";
 
 const TentangPage = () => {
   const stats = [
-    { icon: Users, value: '1000+', label: 'Pelanggan Puas', color: 'from-blue-500 to-blue-600' },
-    { icon: Award, value: '500+', label: 'Produk Terjual', color: 'from-green-500 to-green-600' },
-    { icon: Sparkles, value: '50+', label: 'Design Unik', color: 'from-purple-500 to-purple-600' },
-    { icon: TrendingUp, value: '3+', label: 'Tahun Berkembang', color: 'from-amber-500 to-amber-600' }
+    {
+      icon: Users,
+      value: "1000+",
+      label: "Pelanggan Puas",
+      color: "from-blue-500 to-blue-600",
+    },
+    {
+      icon: Award,
+      value: "500+",
+      label: "Produk Terjual",
+      color: "from-green-500 to-green-600",
+    },
+    {
+      icon: Sparkles,
+      value: "50+",
+      label: "Design Unik",
+      color: "from-purple-500 to-purple-600",
+    },
+    {
+      icon: TrendingUp,
+      value: "3+",
+      label: "Tahun Berkembang",
+      color: "from-amber-500 to-amber-600",
+    },
   ];
 
   const values = [
     {
       icon: Heart,
-      title: 'Kualitas Premium',
-      description: 'Setiap produk dibuat dengan teliti menggunakan bahan berkualitas tinggi dan teknik rajut tradisional terbaik.'
+      title: "Kualitas Premium",
+      description:
+        "Setiap produk dibuat dengan teliti menggunakan bahan berkualitas tinggi dan teknik rajut tradisional terbaik.",
     },
     {
       icon: Award,
-      title: 'Tradisi Nusantara',
-      description: 'Memadukan motif dan filosofi budaya Indonesia dalam setiap karya untuk melestarikan warisan leluhur.'
+      title: "Tradisi Nusantara",
+      description:
+        "Memadukan motif dan filosofi budaya Indonesia dalam setiap karya untuk melestarikan warisan leluhur.",
     },
     {
       icon: Users,
-      title: 'Kepuasan Pelanggan',
-      description: 'Mengutamakan kepuasan pelanggan melalui pelayanan terbaik dan produk yang sesuai ekspektasi.'
+      title: "Kepuasan Pelanggan",
+      description:
+        "Mengutamakan kepuasan pelanggan melalui pelayanan terbaik dan produk yang sesuai ekspektasi.",
     },
     {
       icon: Target,
-      title: 'Inovasi Berkelanjutan',
-      description: 'Terus berinovasi dalam design dan teknik untuk menghadirkan produk rajut yang modern namun otentik.'
-    }
+      title: "Inovasi Berkelanjutan",
+      description:
+        "Terus berinovasi dalam design dan teknik untuk menghadirkan produk rajut yang modern namun otentik.",
+    },
   ];
 
   const timeline = [
     {
-      year: '2020',
-      title: 'Memulai Perjalanan',
-      description: 'Maharajut didirikan dengan visi melestarikan kerajinan rajut tradisional Indonesia dan membuatnya relevan untuk generasi modern.'
+      year: "2020",
+      title: "Memulai Perjalanan",
+      description:
+        "Maharajut didirikan dengan visi melestarikan kerajinan rajut tradisional Indonesia dan membuatnya relevan untuk generasi modern.",
     },
     {
-      year: '2021',
-      title: 'Pengembangan Produk',
-      description: 'Mengembangkan berbagai kategori produk mulai dari tas, pakaian, hingga aksesoris dengan design yang memadukan tradisi dan modernitas.'
+      year: "2021",
+      title: "Pengembangan Produk",
+      description:
+        "Mengembangkan berbagai kategori produk mulai dari tas, pakaian, hingga aksesoris dengan design yang memadukan tradisi dan modernitas.",
     },
     {
-      year: '2022',
-      title: 'Ekspansi Digital',
-      description: 'Meluncurkan platform digital untuk menjangkau lebih banyak pelanggan di seluruh Indonesia dan memudahkan proses pemesanan.'
+      year: "2022",
+      title: "Ekspansi Digital",
+      description:
+        "Meluncurkan platform digital untuk menjangkau lebih banyak pelanggan di seluruh Indonesia dan memudahkan proses pemesanan.",
     },
     {
-      year: '2023',
-      title: 'Komunitas Berkembang',
-      description: 'Membangun komunitas pengrajin dan pelanggan yang solid, serta menjalin kerjasama dengan berbagai pihak untuk pengembangan bisnis.'
-    }
+      year: "2023",
+      title: "Komunitas Berkembang",
+      description:
+        "Membangun komunitas pengrajin dan pelanggan yang solid, serta menjalin kerjasama dengan berbagai pihak untuk pengembangan bisnis.",
+    },
   ];
 
   const containerVariants = {
@@ -65,9 +100,9 @@ const TentangPage = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
-    }
+        delayChildren: 0.3,
+      },
+    },
   };
 
   const itemVariants = {
@@ -77,9 +112,8 @@ const TentangPage = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+      },
+    },
   };
 
   return (
@@ -101,9 +135,9 @@ const TentangPage = () => {
               Cerita <span className="text-decoration-maharajut">Kami</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Maharajut lahir dari kecintaan terhadap kerajinan tradisional Indonesia dan semangat
-              untuk menghadirkan produk rajut berkualitas tinggi yang memadukan warisan budaya
-              dengan desain kontemporer.
+              Maharajut lahir dari kecintaan terhadap kerajinan tradisional
+              Indonesia dan semangat untuk menghadirkan produk rajut berkualitas
+              tinggi yang memadukan warisan budaya dengan desain kontemporer.
             </p>
           </motion.div>
 
@@ -119,22 +153,24 @@ const TentangPage = () => {
               </h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  Berawal dari kecintaan terhadap kerajinan tangan Nusantara, Maharajut hadir
-                  sebagai jembatan antara tradisi dan modernitas. Kami percaya bahwa setiap
-                  helai benang yang dirajut dengan penuh cinta dapat menceritakan kisah
-                  indah tentang budaya Indonesia.
+                  Berawal dari kecintaan terhadap kerajinan tangan Nusantara,
+                  Maharajut hadir sebagai jembatan antara tradisi dan
+                  modernitas. Kami percaya bahwa setiap helai benang yang
+                  dirajut dengan penuh cinta dapat menceritakan kisah indah
+                  tentang budaya Indonesia.
                 </p>
                 <p>
-                  Dengan didukung oleh pengrajin-pengrajin berpengalaman dan bertalenta,
-                  kami menciptakan produk-produk unik yang tidak hanya indah dipandang,
-                  tetapi juga nyaman digunakan dan tahan lama. Setiap produk Maharajut
-                  adalah hasil dari perpaduan sempurna antara keterampilan tradisional
-                  dan inovasi modern.
+                  Dengan didukung oleh pengrajin-pengrajin berpengalaman dan
+                  bertalenta, kami menciptakan produk-produk unik yang tidak
+                  hanya indah dipandang, tetapi juga nyaman digunakan dan tahan
+                  lama. Setiap produk Maharajut adalah hasil dari perpaduan
+                  sempurna antara keterampilan tradisional dan inovasi modern.
                 </p>
                 <p>
-                  Kami berkomitmen untuk terus mengembangkan dan melestarikan seni rajut
-                  Indonesia, sambil memberikan nilai tambah kepada para pengrajin lokal
-                  dan kepuasan maksimal kepada setiap pelanggan.
+                  Kami berkomitmen untuk terus mengembangkan dan melestarikan
+                  seni rajut Indonesia, sambil memberikan nilai tambah kepada
+                  para pengrajin lokal dan kepuasan maksimal kepada setiap
+                  pelanggan.
                 </p>
               </div>
             </motion.div>
@@ -156,7 +192,9 @@ const TentangPage = () => {
               <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-amber-100">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-amber-600">Since</div>
-                  <div className="text-3xl font-bold text-gray-900">{companyInfo.foundedYear}</div>
+                  <div className="text-3xl font-bold text-gray-900">
+                    {companyInfo.foundedYear}
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -181,11 +219,15 @@ const TentangPage = () => {
                 className="text-center text-white"
               >
                 <div className="flex justify-center mb-4">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${stat.color} rounded-2xl flex items-center justify-center shadow-lg`}>
+                  <div
+                    className={`w-16 h-16 bg-gradient-to-r ${stat.color} rounded-2xl flex items-center justify-center shadow-lg`}
+                  >
                     <stat.icon className="w-8 h-8 text-white" />
                   </div>
                 </div>
-                <div className="text-3xl lg:text-4xl font-bold mb-2">{stat.value}</div>
+                <div className="text-3xl lg:text-4xl font-bold mb-2">
+                  {stat.value}
+                </div>
                 <div className="text-amber-100">{stat.label}</div>
               </motion.div>
             ))}
@@ -207,7 +249,8 @@ const TentangPage = () => {
               Visi & <span className="text-decoration-maharajut">Misi</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Komitmen kami dalam melestarikan budaya dan memberikan yang terbaik
+              Komitmen kami dalam melestarikan budaya dan memberikan yang
+              terbaik
             </p>
           </motion.div>
 
@@ -222,7 +265,9 @@ const TentangPage = () => {
               <div className="w-16 h-16 bg-gradient-to-r from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center mb-6">
                 <Target className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-heading text-gray-900 mb-4">Visi Kami</h3>
+              <h3 className="text-2xl font-heading text-gray-900 mb-4">
+                Visi Kami
+              </h3>
               <p className="text-gray-600 leading-relaxed">
                 {companyInfo.vision}
               </p>
@@ -238,7 +283,9 @@ const TentangPage = () => {
               <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
                 <Heart className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-heading text-gray-900 mb-4">Misi Kami</h3>
+              <h3 className="text-2xl font-heading text-gray-900 mb-4">
+                Misi Kami
+              </h3>
               <p className="text-gray-600 leading-relaxed">
                 {companyInfo.mission}
               </p>
@@ -258,10 +305,12 @@ const TentangPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-heading text-gray-900 mb-4">
-              Nilai-Nilai <span className="text-decoration-maharajut">Kami</span>
+              Nilai-Nilai{" "}
+              <span className="text-decoration-maharajut">Kami</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Prinsip-prinsip yang menjadi fondasi dalam setiap langkah perjalanan Maharajut
+              Prinsip-prinsip yang menjadi fondasi dalam setiap langkah
+              perjalanan Maharajut
             </p>
           </motion.div>
 
@@ -281,8 +330,12 @@ const TentangPage = () => {
                 <div className="w-16 h-16 bg-gradient-to-r from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <value.icon className="w-8 h-8 text-amber-600" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">{value.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{value.description}</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  {value.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {value.description}
+                </p>
               </motion.div>
             ))}
           </motion.div>
@@ -300,10 +353,12 @@ const TentangPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-heading text-gray-900 mb-4">
-              Perjalanan <span className="text-decoration-maharajut">Maharajut</span>
+              Perjalanan{" "}
+              <span className="text-decoration-maharajut">Maharajut</span>
             </h2>
             <p className="text-lg text-gray-600">
-              Melihat kembali pencapaian dan milestone penting dalam perjalanan kami
+              Melihat kembali pencapaian dan milestone penting dalam perjalanan
+              kami
             </p>
           </motion.div>
 
@@ -322,13 +377,21 @@ const TentangPage = () => {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
+                  className={`flex items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
                 >
-                  <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
+                  <div
+                    className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}
+                  >
                     <div className="bg-white rounded-2xl p-6 shadow-lg">
-                      <div className="text-2xl font-bold text-amber-600 mb-2">{item.year}</div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3">{item.title}</h3>
-                      <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+                      <div className="text-2xl font-bold text-amber-600 mb-2">
+                        {item.year}
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
 
@@ -357,8 +420,9 @@ const TentangPage = () => {
               Mari Bergabung dengan Keluarga Maharajut
             </h2>
             <p className="text-amber-100 text-lg mb-8 max-w-2xl mx-auto">
-              Jadilah bagian dari perjalanan kami dalam melestarikan kerajinan rajut tradisional
-              Indonesia dan rasakan pengalaman berbelanja yang tak terlupakan.
+              Jadilah bagian dari perjalanan kami dalam melestarikan kerajinan
+              rajut tradisional Indonesia dan rasakan pengalaman berbelanja yang
+              tak terlupakan.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

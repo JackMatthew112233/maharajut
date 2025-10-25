@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useMemo } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import {
@@ -21,21 +21,18 @@ const CheckoutPage = () => {
   const router = useRouter();
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
-  const [product, setProduct] = useState<any>(null);
   const [isLiked, setIsLiked] = useState(false);
 
   // Convert slug to product name and find product
-  useEffect(() => {
+  const product = useMemo(() => {
     if (params.slug) {
       const slug = params.slug as string;
-      const productName = slug
-        .replace(/-/g, " ")
-        .replace(/\b\w/g, (l) => l.toUpperCase());
       const foundProduct = products.find(
         (p) => p.name.toLowerCase().replace(/\s+/g, "-") === slug.toLowerCase(),
       );
-      setProduct(foundProduct);
+      return foundProduct || null;
     }
+    return null;
   }, [params.slug]);
 
   if (!product) {
@@ -146,7 +143,6 @@ const CheckoutPage = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
       },
     },
   };
