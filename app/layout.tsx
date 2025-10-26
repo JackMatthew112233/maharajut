@@ -29,6 +29,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Maharajut Team" }],
   creator: "Maharajut",
   publisher: "Maharajut",
+  icons: {
+    icon: "/images/Logo Maharajut.jpg",
+    shortcut: "/images/Logo Maharajut.jpg",
+    apple: "/images/Logo Maharajut.jpg",
+  },
   openGraph: {
     title: "Maharajut - Kerajinan Rajut Nusantara",
     description:

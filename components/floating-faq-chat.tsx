@@ -161,7 +161,7 @@ const FloatingFAQChat = () => {
 
   const handleContactWhatsApp = () => {
     const message = `Halo Maharajut! Saya ingin bertanya lebih lanjut tentang produk rajut Anda.`;
-    const whatsappUrl = `https://wa.me/+6281234567890?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/${companyInfo.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 

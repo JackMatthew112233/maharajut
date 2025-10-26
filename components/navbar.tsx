@@ -2,9 +2,11 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ShoppingBag, Phone, Instagram, Facebook } from "lucide-react";
+import { companyInfo } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 const Navbar = () => {
@@ -49,10 +51,14 @@ const Navbar = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Link href="/" className="flex items-center space-x-2">
-                <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-amber-600 to-amber-800 rounded-lg flex items-center justify-center shadow-md">
-                  <span className="text-white font-bold text-sm lg:text-lg">
-                    M
-                  </span>
+                <div className="w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center">
+                  <Image
+                    src="/images/Logo Maharajut.jpg"
+                    alt="Maharajut Logo"
+                    width={40}
+                    height={40}
+                    className="object-contain rounded-lg shadow-md"
+                  />
                 </div>
                 <div className="flex flex-col">
                   <span className="font-bold text-lg lg:text-xl text-amber-800 transition-colors duration-300">
@@ -107,7 +113,7 @@ const Navbar = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <Link
-                  href="https://wa.me/+6281234567890"
+                  href={`https://wa.me/${companyInfo.whatsapp.replace(/[^0-9]/g, "")}`}
                   target="_blank"
                   className="flex items-center space-x-2 px-4 py-2 rounded-full text-sm font-medium bg-amber-600 text-white hover:bg-amber-700 shadow-md transition-all duration-300"
                 >
@@ -212,7 +218,7 @@ const Navbar = () => {
                   transition={{ delay: 0.4 }}
                 >
                   <Link
-                    href="https://wa.me/+6281234567890"
+                    href={`https://wa.me/${companyInfo.whatsapp.replace(/[^0-9]/g, "")}`}
                     target="_blank"
                     className="flex items-center justify-center space-x-2 w-full bg-amber-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-amber-700 transition-colors duration-300 mx-auto max-w-xs"
                     onClick={toggleMenu}

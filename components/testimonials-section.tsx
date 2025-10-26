@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Star, Quote, ArrowLeft, ArrowRight } from "lucide-react";
-import { testimonials } from "@/lib/data";
+import { testimonials, companyInfo } from "@/lib/data";
 import { useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
@@ -284,7 +284,7 @@ const TestimonialsSection = () => {
               </motion.a>
 
               <motion.a
-                href="https://wa.me/+6281234567890"
+                href={`https://wa.me/${companyInfo.whatsapp.replace(/[^0-9]/g, "")}`}
                 target="_blank"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

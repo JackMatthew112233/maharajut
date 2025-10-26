@@ -12,7 +12,7 @@ import {
   Heart,
   Share2,
 } from "lucide-react";
-import { products } from "@/lib/data";
+import { products, companyInfo } from "@/lib/data";
 import Link from "next/link";
 import { toast } from "sonner";
 
@@ -68,7 +68,7 @@ const CheckoutPage = () => {
   const handleConfirmOrder = () => {
     const message = `Halo Maharajut,%0A%0ASaya ingin memesan:%0A%0AProduk: ${product.name}%0AHarga: ${formatPrice(product.price)}%0AJumlah: ${quantity}%0ATotal: ${formatPrice(totalPrice)}%0A%0AMohon informasi lebih lanjut untuk proses pemesanan.%0A%0ATerima kasih!`;
 
-    const whatsappUrl = `https://wa.me/+6281234567890?text=${message}`;
+    const whatsappUrl = `https://wa.me/${companyInfo.whatsapp.replace(/[^0-9]/g, "")}?text=${message}`;
     window.open(whatsappUrl, "_blank");
 
     // Show success toast

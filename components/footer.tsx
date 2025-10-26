@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   MapPin,
@@ -147,8 +148,14 @@ const Footer = () => {
           {/* Company Info */}
           <motion.div variants={itemVariants} className="lg:col-span-1">
             <div className="flex items-center justify-center md:justify-start space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-amber-600 to-amber-800 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-xl">M</span>
+              <div className="w-12 h-12 flex items-center justify-center">
+                <Image
+                  src="/images/Logo Maharajut.jpg"
+                  alt="Maharajut Logo"
+                  width={48}
+                  height={48}
+                  className="object-contain rounded-xl shadow-lg"
+                />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-amber-800">

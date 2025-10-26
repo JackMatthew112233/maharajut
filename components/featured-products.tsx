@@ -9,9 +9,7 @@ import { products } from "@/lib/data";
 const FeaturedProducts = () => {
   const [likedProducts, setLikedProducts] = useState<Set<string>>(new Set());
 
-  const featuredProducts = products
-    .filter((product) => product.featured)
-    .slice(0, 6);
+  const featuredProducts = products.slice(0, 6);
 
   const toggleLike = (productId: string) => {
     setLikedProducts((prev) => {

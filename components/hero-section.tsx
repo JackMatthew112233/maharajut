@@ -9,10 +9,10 @@ const HeroSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const heroImages = [
-    "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1556760544-74068565f05c?w=600&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&h=600&fit=crop",
+    "/images/Gallery Maharajut.webp",
+    "/images/Gallery Maharajut (2).webp",
+    "/images/Gallery Maharajut.jpg",
+    "/images/Gallery Maharajut (2).jpg",
   ];
 
   const stats = [
