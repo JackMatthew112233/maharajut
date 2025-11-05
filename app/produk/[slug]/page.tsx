@@ -66,7 +66,7 @@ const CheckoutPage = () => {
   const totalPrice = product.price * quantity;
 
   const handleConfirmOrder = () => {
-    const message = `Halo Maharajut,%0A%0ASaya ingin memesan:%0A%0AProduk: ${product.name}%0AHarga: ${formatPrice(product.price)}%0AJumlah: ${quantity}%0ATotal: ${formatPrice(totalPrice)}%0A%0AMohon informasi lebih lanjut untuk proses pemesanan.%0A%0ATerima kasih!`;
+    const message = `Hi, saya ingin memesan:%0A%0A${product.name}%0AHarga: ${formatPrice(product.price)}%0AJumlah: ${quantity} pcs%0ATotal: ${formatPrice(totalPrice)}%0A%0ABerikut bukti pembayarannya`;
 
     const whatsappUrl = `https://wa.me/${companyInfo.whatsapp.replace(/[^0-9]/g, "")}?text=${message}`;
     window.open(whatsappUrl, "_blank");
@@ -74,7 +74,7 @@ const CheckoutPage = () => {
     // Show success toast
     toast.success("Pesanan dikonfirmasi!", {
       description:
-        "Anda akan diarahkan ke WhatsApp untuk melanjutkan pemesanan.",
+        "Anda akan diarahkan ke WhatsApp untuk konfirmasi pembayaran.",
       duration: 4000,
     });
   };
@@ -371,13 +371,55 @@ const CheckoutPage = () => {
               </div>
 
               {/* Total */}
-              <div className="flex justify-between items-center mb-8">
+              <div className="flex justify-between items-center mb-6">
                 <span className="text-lg font-semibold text-gray-900">
                   Total
                 </span>
                 <span className="text-2xl font-bold text-amber-600">
                   {formatPrice(totalPrice)}
                 </span>
+              </div>
+
+              {/* Bank Account Information */}
+              <div className="mb-8 p-4 bg-gradient-to-br from-amber-50 to-amber-100 rounded-xl border border-amber-200">
+                <h3 className="text-sm font-semibold text-gray-900 mb-3 flex items-center">
+                  <svg className="w-5 h-5 mr-2 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                  </svg>
+                  Informasi Pembayaran
+                </h3>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between bg-white p-3 rounded-lg">
+                    <div>
+                      <p className="text-xs text-gray-600 mb-1">Bank</p>
+                      <p className="font-semibold text-gray-900">Bank Mandiri</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between bg-white p-3 rounded-lg">
+                    <div>
+                      <p className="text-xs text-gray-600 mb-1">No. Rekening</p>
+                      <p className="font-semibold text-gray-900 text-lg">1520033640042</p>
+                    </div>
+                    <button
+                      onClick={() => {
+                        navigator.clipboard.writeText("1520033640042");
+                        toast.success("Nomor rekening berhasil disalin!");
+                      }}
+                      className="px-3 py-1 text-xs bg-amber-600 text-white rounded-md hover:bg-amber-700 transition-colors"
+                    >
+                      Salin
+                    </button>
+                  </div>
+                  <div className="flex items-center justify-between bg-white p-3 rounded-lg">
+                    <div>
+                      <p className="text-xs text-gray-600 mb-1">Atas Nama</p>
+                      <p className="font-semibold text-gray-900">Lisa Angriani</p>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-xs text-amber-700 mt-3 bg-amber-50 p-2 rounded-md">
+                  💡 Silakan transfer terlebih dahulu, lalu konfirmasi melalui WhatsApp
+                </p>
               </div>
 
               {/* Confirm Order Button */}
@@ -393,7 +435,7 @@ const CheckoutPage = () => {
               </motion.button>
 
               <p className="text-center text-gray-500 text-sm mt-4">
-                Anda akan diarahkan ke WhatsApp untuk menyelesaikan pesanan
+                Silakan transfer terlebih dahulu, lalu konfirmasi pembayaran via WhatsApp
               </p>
 
               {/* Additional Info */}
